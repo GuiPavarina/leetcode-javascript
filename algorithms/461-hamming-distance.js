@@ -1,31 +1,3 @@
-
-class Binary {
-
-    constructor () {
-        this.arr = [];
-        this.fill();
-    }
-
-    fill() {
-        for(let i = 0 ; i <= 30 ; i++) {
-            this.arr.push(Math.pow(2, i));
-        }
-    }
-
-    numToBin(x) {
-        let result = "";
-        for(let index = 30 ; index >= 0; index-- ) {
-            if(x >= this.arr[index]) {
-                x = x - this.arr[index];
-                result = result + "1";
-            } else
-                result = result + "0";
-        }
-        return result;
-    }
-
-}
-
 /**
  * 
  * Returns the number of different chars
@@ -34,6 +6,11 @@ class Binary {
  * @param {string} s2 
  */
 const compare = (s1, s2) => {
+    if(s1.length > s2.length)
+        s2 = padding(s2, s1.length - s2.length);
+    else
+        s1 = padding(s1, s2.length - s1.length);
+
     let diffs = 0;
     for(let i = 0 ; i < s1.length ; i++ ) {
         if(s1[i] !== s2[i]) {
@@ -43,18 +20,20 @@ const compare = (s1, s2) => {
     return diffs;
 }
 
+const padding = (s1, num) => {
+    return "0".repeat(num) + s1;
+}
+
 /**
  * @param {number} x
  * @param {number} y
  * @return {number}
  */
 var hammingDistance = function(x, y) {
-    
-    const binary = new Binary();
+        
+    const binX = x.toString(2);
+    const binY = y.toString(2);
 
-    const binX = binary.numToBin(x);
-    const binY = binary.numToBin(y);
-    
     // for test purposes
     // console.log(`------------------------`);
     // console.log(`${x} to bin: ${binX}`);
