@@ -25,6 +25,9 @@ const padding = (s1, num) => {
 }
 
 /**
+ * 
+ * https://leetcode.com/problems/hamming-distance/
+ * 
  * @param {number} x
  * @param {number} y
  * @return {number}
