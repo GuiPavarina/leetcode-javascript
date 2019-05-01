@@ -6,14 +6,7 @@
  * @return {number[][]}
  */
 var flipAndInvertImage = function(A) {
-
-    A.forEach( (el, i) => {
-        A[i] = el.reverse();
-        A[i].forEach( (item, index) => {
-            A[i][index] = ( item === 1) ? 0 : 1;
-        });
-    });
-    return A;
+    return A.map( (el) => el.reverse().map( val => val === 1 ? 0 : 1 ) );
 };
 
 console.log(flipAndInvertImage([[1,1,0],[1,0,1],[0,0,0]]));
