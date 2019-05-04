@@ -12,17 +12,16 @@ const compare = (s1, s2) => {
         s1 = padding(s1, s2.length - s1.length);
 
     let diffs = 0;
-    for(let i = 0 ; i < s1.length ; i++ ) {
-        if(s1[i] !== s2[i]) {
-            diffs++
+    [...s1].forEach( (el, i) => {
+        if(el !== s2[i]) {
+            diffs++;
         }
-    }
+    });
+        
     return diffs;
 }
 
-const padding = (s1, num) => {
-    return "0".repeat(num) + s1;
-}
+const padding = (s1, num) => "0".repeat(num) + s1;
 
 /**
  * 

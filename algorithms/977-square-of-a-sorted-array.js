@@ -5,15 +5,10 @@
  * @param {number[]} A
  * @return {number[]}
  */
-var sortedSquares = function(A) {
-
-    A.forEach( (el, i) => {
-        A[i] = Math.pow(el,2);
-    });
-
-    return A.sort( (v1, v2) => {
-        return v1 - v2;
-    });
+var sortedSquares = (A) => {
+    return A
+        .map( el => Math.pow(el, 2))
+        .sort( (v1, v2) => v1 - v2);
 };
 
 // test cases
