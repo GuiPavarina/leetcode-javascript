@@ -1,4 +1,6 @@
 /**
+ * https://leetcode.com/problems/number-of-lines-to-write-string/
+ * 
  * @param {number[]} widths
  * @param {string} S
  * @return {number[]}
