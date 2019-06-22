@@ -7,13 +7,13 @@
 const findWords = (words) => {
     return words.filter( (el) => {
         const word = el.toLowerCase();
-        if(checkRows(word, row1)) {
+        if(checkRows(word)) {
             return word;
         }
     });
 };
 
-const checkRows = (word, row) => isUsingOneRow(word, row1) || isUsingOneRow(word, row2) || isUsingOneRow(word, row3);
+const checkRows = (word) => isUsingOneRow(word, row1) || isUsingOneRow(word, row2) || isUsingOneRow(word, row3);
 
 const isUsingOneRow = (word, row) => [...word].every( el => row.indexOf(el) !== -1 );
 
