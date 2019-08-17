@@ -6,9 +6,7 @@
  */
 const diStringMatch = (S) => {
     const array = Array.from({length: (S.length + 1)}, (v, i) => i);
-    const result = [...S].map( (value) => {
-        return value === "D" ? array.pop() : array.shift();
-    });
+    const result = [...S].map( (value) => value === "D" ? array.pop() : array.shift());
     result.push(array.shift());
     return result;
 };
